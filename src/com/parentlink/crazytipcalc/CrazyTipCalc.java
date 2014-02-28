@@ -43,7 +43,7 @@ public class CrazyTipCalc extends Activity {
 		else
 		{
 			billBeforeTip= savedInstanceState.getDouble(BILL_WITHOUT_TIP); 
-			tipAmount= savedInstanceState.getDouble(CURRENT_TIP); 
+			tipAmount= savedInstanceState.getDouble(CURRENT_TIP) *1.0; 
 			finalBill= savedInstanceState.getDouble(TOTAL_BILL); 
 		}
 		//It's going to find the view by ID and set the variable equal to whatever is inputted by the user
@@ -102,10 +102,10 @@ public class CrazyTipCalc extends Activity {
 		public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
 
 			//Turning the tipAmount into a decimal value
-			tipAmount = (tipSeekBar.getProgress()) * .01;
+			tipAmount = ((tipSeekBar.getProgress()) * .01);
 			
-			tipAmountET.setText(String.format("%.02f", tipAmount));
-			
+			tipAmountET.setText(String.valueOf(tipSeekBar.getProgress()) + "%");
+		
 			updateTipAndFinalBill();
 			
 		}
@@ -127,13 +127,21 @@ public class CrazyTipCalc extends Activity {
 	//Our method to update the tip and final bill
 	private void updateTipAndFinalBill(){
 		
-		//Taking the tip amount inputted from the Edit Text box and turning it to a string, which is then parsed to a double
-		double tipAmount = Double.parseDouble(tipAmountET.getText().toString());
+		double tipAmount;
 		
-		double finalBill = billBeforeTip + (billBeforeTip * tipAmount);
+		//Taking the tip amount inputted from the Edit Text box and turning it to a string, which is then parsed to a double
+		try{
+			tipAmount = (Double.parseDouble(tipAmountET.getText().toString().replace("%", "")) *.01);
+		}
+		catch(NumberFormatException e){
+			tipAmount = .15;
+		}
+		
+		
+		double finalBill =billBeforeTip + (billBeforeTip * tipAmount);
 		
 		//Setting the Edit Text box of final bill to the "finalBill" variable with a format of 2 decimal places
-		finalBillET.setText(String.format("%.02f", finalBill));
+		finalBillET.setText("$"+ String.format("%.02f", finalBill));
 	}
 	
 	//This will be called whenever something interrupts the app (leaving the app, etc.) so we save the information we need
