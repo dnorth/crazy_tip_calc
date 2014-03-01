@@ -29,8 +29,8 @@ public final class R {
         public static final int billtextView=0x7f080001;
         public static final int changeTipSeekBar=0x7f080008;
         public static final int changeTipTextView=0x7f080007;
-        public static final int finalBillEditText=0x7f080006;
-        public static final int finalBillTextView=0x7f080005;
+        public static final int finalBillEditText=0x7f080005;
+        public static final int finalBillTextView=0x7f080006;
         public static final int textView2=0x7f080000;
         public static final int tipEditText=0x7f080004;
         public static final int tipTextView=0x7f080003;
