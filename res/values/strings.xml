@@ -13,7 +13,32 @@
     <string name="final_text_view">Final Bill</string>
     <string name="final_edit_text">0.0</string>
     
-    <string name="change_tip_text_view">Tip</string>
+    <string name="change_tip_text_view">Change Tip</string>
     
+    <string name="intro_text_view">Introduction</string>
+    <string name="friendly_check_text_view">Friendly</string>
+    <string name="specials_check_text_view">Specials</string>
+    <string name="opinion_check_text_view">Opinion</string>
+    
+    <string name="availability_text_view">Availability</string>
+    <string name="radio_bad_text_view">Bad</string>
+    <string name="radio_ok_text_view">OK</string>
+    <string name="radio_good_text_view">Good</string>
+    
+    <string name="item_text_view">Item 1</string>
+    <string name="sub_item_text_view">Sub Item 1</string>
+    
+    <string name="time_waiting_text_view">Time Waiting for Service</string>
+    
+    <string name="button_start_text_view">Start</string>
+    <string name="button_pause_text_view">Pause</string>
+    <string name="button_reset_text_view">Reset</string>
+    
+    <string-array name="problem_solving">
+	 <item>Problem Solving</item>
+	 <item>Bad</item>
+	 <item>OK</item>
+	 <item>Good</item>
+    </string-array>
 
 </resources>
